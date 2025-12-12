@@ -4,7 +4,7 @@
 
 <template>
     <div class="w-full h-full flex flex-col justify-center items-center">
-        <h1 class="text-4xl font-bold mb-4">Página em construção</h1>
+        <h1 class="text-4xl font-bold mb-4">Blog em construção</h1>
         <p>Só um segundo!</p>
     </div>
 </template>
