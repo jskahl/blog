@@ -1,5 +1,9 @@
 <script setup lang="ts">
-    
+import { ref } from 'vue';
+import { ThemeLightDark, WhiteBalanceSunny, MoonWaningCrescent } from '@/icons';
+
+const theme = ref("dark")
+const isHover = ref(false);
 </script>
 
 <template>
@@ -12,8 +16,12 @@
         <router-link to="/">
             <h1>Blog</h1> 
         </router-link>
-
-        <div class="">
+        <div>
+            <div class="cursor-pointer hover:text-green-400" @mouseover="isHover = true" @mouseleave="isHover = false" @click="theme = theme === 'light' ? 'dark' : 'light'">
+                <ThemeLightDark v-if="isHover" />
+                <WhiteBalanceSunny v-if="theme === 'light' && !isHover" />
+                <MoonWaningCrescent v-if="theme ==='dark' && !isHover" />
+            </div>
         </div>
     </div>
 </template>
