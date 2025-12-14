@@ -1,5 +1,5 @@
-import ThemeLightDark from "vue-material-design-icons/ThemeLightDark.vue";
-import WhiteBalanceSunny from "vue-material-design-icons/WhiteBalanceSunny.vue";
-import MoonWaningCrescent from "vue-material-design-icons/MoonWaningCrescent.vue";
+import Web from "vue-material-design-icons/Web.vue";
+import WeatherSunny from "vue-material-design-icons/WeatherSunny.vue";
+import WeatherNight from "vue-material-design-icons/WeatherNight.vue";
 
-export { ThemeLightDark, WhiteBalanceSunny, MoonWaningCrescent };
+export { Web, WeatherSunny, WeatherNight };
