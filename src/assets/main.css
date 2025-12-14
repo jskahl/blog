@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 @import "tailwindcss";
 
-::root {
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
     --bg-color: #232323;
-    --text-color: #FF0000;
+    --text-color: #efefef;
 }
 
 html,

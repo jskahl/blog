@@ -3,13 +3,13 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
-    <RouterView />
+    <div class="bg-(--text-color) text-(--bg-color) dark:bg-(--bg-color) dark:text-(--text-color)">
+        <RouterView />
+    </div>
 </template>
 
 <style scoped>
-@import "tailwindcss";
-
-body {
-    @apply bg-(var[--text-color]) text-(var[--bg-color]) dark:bg-(var[--bg-color]) dark:text-(var[--text-color]);
+html.dark {
+    color-scheme: dark;
 }
 </style>
