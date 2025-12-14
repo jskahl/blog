@@ -26,7 +26,7 @@ const toggleDark = useToggle(isDark);
             cursor-pointer 
             hover:text-green-800 active:text-green-800
             dark:hover:text-green-400 dark:active:text-green-400
-            hover:scale-105 active:rotate-45 transition-transform
+            hover:scale-105 transition-transform active:animate-spin
             "
         @click="toggleDark()"
         title="Tema"
