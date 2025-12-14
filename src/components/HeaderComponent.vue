@@ -15,7 +15,7 @@ const toggleDark = useToggle(isDark);
     sticky top-0 z-50
     flex justify-between items-center
     px-3 md:px-6 mb-8 mx-2
-    border-b-2 border-b-(--text-color)"
+    border-b-2 border-b-(--bg-color) dark:border-b-(--text-color)"
   >
     <router-link to="/">
       <h1>Blog</h1>
@@ -24,8 +24,9 @@ const toggleDark = useToggle(isDark);
       <div
         class="
             cursor-pointer 
-            hover:text-green-400 active:text-green-400
-            hover:rotate-12 active:scale-95 transition-transform
+            hover:text-green-800 active:text-green-800
+            dark:hover:text-green-400 dark:active:text-green-400
+            hover:scale-105 active:rotate-45 transition-transform
             "
         @click="toggleDark()"
         title="Tema"
@@ -34,7 +35,5 @@ const toggleDark = useToggle(isDark);
           <WeatherNight v-if="isDark" />
       </div>
     </div>
-
-    <div class="w-10 h-10 bg-green-200 dark:bg-red-900">aaa</div>
   </header>
 </template>
