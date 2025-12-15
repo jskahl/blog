@@ -1,11 +1,13 @@
 <script setup lang="ts">
-    console.log("Página em construção");
+import ListPosts from '../components/ListPosts.vue'; 
 </script>
 
 <template>
-    <div class="w-full h-full flex flex-col items-center">
-        <h1 class="text-4xl font-bold mb-4">Blog em construção</h1>
-        <p>Só um segundo!</p>
-
+    <div>
+        <h1 class="text-2xl text-green-800 dark:text-green-400 mb-1.5">Olá!</h1>
+        <p class="text-justify">
+            Esse blog é dedicado especificamente as minhas explicações sobre desenvolvimento web, programação e assuntos relacionados. Compartilharei meus conhecimentos, experiências e dicas para ajudar outros desenvolvedores em seus devidos aprendizados. Fique à vontade para explorar os artigos e aprender junto comigo!
+        </p>
+        <ListPosts />
     </div>
 </template>
