@@ -20,21 +20,24 @@ const modules = import.meta.glob("../posts/*.md", {
 onMounted(async () => {
   for (const load of Object.values(modules)) {
     const raw = await load();
-    md.render(raw); // triggers frontmatter hook
+    md.render(raw);
   }
 });
 </script>
 
 <template>
 <div class="mt-8">
-    <h1 class="text-2xl text-green-800 dark:text-green-400 mb-4">
+    <h1 class="text-2xl text-green-800 dark:text-green-400 mb-4 border-b-2 border-(--bg-color) dark:border-(--text-color) border-dashed pb-2">
       Posts Recentes
     </h1>
     <div v-for="(post, index) in frontmatters" :key="index" class="my-5">
       <router-link
-        :to="`/post/${post.filename}`"
-        class="block mb-4 p-4 bg-(--text-color) dark:bg-(--bg-color) border-b-2 border-dashed border-(--bg-color) dark:border-(--text-color) hover:shadow-xl transition-shadow duration-300"
-        :class="[index === 0 ? 'border-t-2' : '']"
+          :to="`/post/${post.filename.replace('.md', '')}`"
+        class="
+            block
+            mb-4 p-4 bg-(--text-color) dark:bg-(--bg-color)
+            dark:border-(--text-color)
+            hover:border-double transition-normal"
       >
         <h2 class="text-xl font-bold mb-2 text-green-800 dark:text-green-400">
           {{ post.title }}

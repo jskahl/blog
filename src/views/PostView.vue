@@ -1,17 +1,20 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import MarkdownIt from "markdown-it";
 import frontMatter from "markdown-it-front-matter";
 import yaml from "js-yaml";
-import PostRender from "../components/PostRender.vue";
 
 const route = useRoute();
 
-const content = ref("");
+const html = ref("");
 const frontmatter = ref<any>({});
 
-const md = new MarkdownIt();
+const md = new MarkdownIt({
+  html: true,
+  linkify: true,
+  typographer: true,
+});
 
 md.use(frontMatter, (fm) => {
   frontmatter.value = yaml.load(fm);
@@ -22,30 +25,23 @@ const modules = import.meta.glob("../posts/*.md", {
   import: "default",
 });
 
-watch(
-  () => route.params.id,
-  async (id) => {
-    if (!id || typeof id !== "string") return;
+onMounted(async () => {
+  const id = route.params.id as string;
+  if (!id) return;
 
-    // ensure filename ends with .md
-    const filename = id.endsWith(".md") ? id : `${id}.md`;
+  const loader = modules[`../posts/${id}.md`];
+  if (!loader) {
+    html.value = "<h1>404</h1>";
+    return;
+  }
 
-    const loader = modules[`../posts/${filename}`];
-
-    if (!loader) {
-      content.value = md.render("# 404\nPost not found");
-      return;
-    }
-
-    const raw = await loader();
-    content.value = md.render(raw);
-  },
-  { immediate: true }
-);
+  const raw = await loader();
+  html.value = md.render(raw);
+});
 </script>
 
 <template>
-<div>
-  <PostRender :content="content" />
-</div>
+  <article class="prose dark:prose-invert markdown w-full h-full">
+    <div v-html="html" />
+  </article>
 </template>
