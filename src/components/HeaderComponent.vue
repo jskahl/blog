@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
 import { WeatherSunny, WeatherNight } from "@/icons";
 import { useDark, useToggle } from "@vueuse/core";
 

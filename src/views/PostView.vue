@@ -16,7 +16,7 @@ const md = new MarkdownIt({
   typographer: true,
 });
 
-md.use(frontMatter, (fm) => {
+md.use(frontMatter, (fm: string) => {
   frontmatter.value = yaml.load(fm);
 });
 
@@ -35,7 +35,7 @@ onMounted(async () => {
     return;
   }
 
-  const raw = await loader();
+  const raw = (await loader()) as string;
   html.value = md.render(raw);
 });
 </script>
