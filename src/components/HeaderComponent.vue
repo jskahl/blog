@@ -18,7 +18,7 @@ const toggleDark = useToggle(isDark);
     border-b-2 border-b-(--bg-color) dark:border-b-(--text-color)"
   >
     <router-link to="/">
-      <h1>Blog</h1>
+      <h1 class="text-3xl">Blog</h1>
     </router-link>
     <div>
       <div
