@@ -1,21 +1,40 @@
 ---
 filename: hello-world.md
 title: Hello World
-date: 12/03/2025
+date: 15/12/2025
 tags:
-  - python
-  - logica
+  - markdown
 ---
 
 # Hello World
 
-Esse artigo é sobre um Hello World simples em python.
+Post teste para o meu blog.
 
-- função print()
-- print um valor
+Vou inserir algumas funções de exemplo para ilustrar as possibilidades de formatação em Markdown.
 
-
-``` python
-print("Hello, World!")
+### Código
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!")
+    }
+}
 ```
-Esse código imprime a mensagem "Hello, World!" na tela.
+
+### Listas
+
+- Lorem
+- Ipsum
+    - Lorem
+    - Ipsum
+
+### Checklist
+
+- [ ] Lorem
+- [ ] Ipsum
+
+### Citação
+
+> Lorem Ipsum
+
+> Lorem Ipsum
