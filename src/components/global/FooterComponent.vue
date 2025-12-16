@@ -5,7 +5,7 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <template>
-    <footer class="w-full h-16 flex justify-between items-center px-2 md:px-6 mt-auto mx-2 border-t-2 border-t(--bg-color) dark:border-t-(--text-color)">
+    <footer class="select-none w-full h-16 flex justify-between items-center px-2 md:px-6 mt-auto mx-2 border-t-2 border-t(--bg-color) dark:border-t-(--text-color)">
         <h1 class="text-sm">
             © {{ currentYear }} José Eduardo Kahl · Blog pessoal
         </h1>
