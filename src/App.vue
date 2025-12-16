@@ -3,7 +3,7 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
-    <div class="bg-(--text-color) text-(--bg-color) dark:bg-(--bg-color) dark:text-(--text-color)">
+    <div class="scroll-smooth bg-(--text-color) text-(--bg-color) dark:bg-(--bg-color) dark:text-(--text-color)">
         <RouterView />
     </div>
 </template>

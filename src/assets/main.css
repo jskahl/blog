@@ -13,6 +13,7 @@
 
 html,
 body {
+    scroll-behavior: smooth;
     font-family: "JetBrains Mono", monospace;
     font-optical-sizing: auto;
     font-weight: bold;
@@ -32,4 +33,27 @@ body {
 
 #app {
     height: 100%;
+}
+
+
+.hljs {
+  @apply block;
+}
+html:not(.dark) .hljs {
+  @import 'highlight.js/styles/github-dark.css';
+}
+
+/* dark mode */
+html.dark .hljs {
+  @import 'highlight.js/styles/github.css';
+}
+
+html.dark .hljs {
+  background: #efefef;
+  color: #232323;
+}
+
+html:not(.dark) .hljs {
+  background: #232323;
+  color: #efefef;
 }
