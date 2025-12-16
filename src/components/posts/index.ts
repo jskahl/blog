@@ -1,5 +1,3 @@
-import ListPosts from './ListPosts.vue'
-import PostCard from './PostCard.vue'
-import PostRender from './PostRender.vue'
-
-export { ListPosts, PostCard, PostRender }
+export { default as ListPosts } from "./ListPosts.vue";
+export { default as PostCard } from "./PostCard.vue";
+export { default as PostRender } from "./PostRender.vue";

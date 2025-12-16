@@ -1,4 +1,2 @@
-import FooterComponent from "./FooterComponent.vue";
-import HeaderComponent from "./HeaderComponent.vue";
-
-export { FooterComponent, HeaderComponent };
+export { default as FooterComponent } from "./FooterComponent.vue";
+export { default as HeaderComponent } from "./HeaderComponent.vue";

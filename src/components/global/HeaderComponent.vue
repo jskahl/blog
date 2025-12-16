@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import { WeatherSunny, WeatherNight, BookMultipleOutline, DotsHorizontalCircleOutline } from "@/icons";
+import { WeatherSunny, WeatherNight, BookMultipleOutline } from "@/icons";
 import { useDark, useToggle } from "@vueuse/core";
-import { ref } from "vue";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
-const isMobileMenuOpen = ref(false);
-
 </script>
 
 <template>

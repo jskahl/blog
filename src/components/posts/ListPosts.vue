@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { PostCard } from '@/components';
+import { PostCard } from '@/components';
 </script>
 
 <template>
