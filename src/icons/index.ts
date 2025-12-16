@@ -6,6 +6,7 @@ import DotsHorizontalCircleOutline from "vue-material-design-icons/DotsHorizonta
 import CalendarBlank from "vue-material-design-icons/CalendarBlank.vue";
 import ContentCopy from "vue-material-design-icons/ContentCopy.vue";
 import Link from "vue-material-design-icons/Link.vue";
+import At from "vue-material-design-icons/At.vue";
 
 export {
     Web,
@@ -16,4 +17,5 @@ export {
     CalendarBlank,
     ContentCopy,
     Link,
+    At,
 };
