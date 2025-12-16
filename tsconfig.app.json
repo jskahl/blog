@@ -1,16 +1,10 @@
 {
-    "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
     "compilerOptions": {
         "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
         "types": [
             "vite/client"
         ],
-        "baseUrl": ".",
-        "paths": {
-            "@/*": [
-                "src/*"
-            ]
-        },
         /* Linting */
         "strict": true,
         "noUnusedLocals": true,
@@ -22,6 +16,10 @@
     "include": [
         "src/**/*.ts",
         "src/**/*.tsx",
-        "src/**/*.vue"
+        "src/**/*.vue",
+        "src/components/posts/index.ts",
+        "src/components/posts/index.ts",
+        "src/icons/index.js",
+        "src/icons/index.js"
     ]
 }
