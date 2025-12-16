@@ -2,15 +2,16 @@
 filename: hello-world.md
 title: Hello World
 date: 15/12/2025
+description: São diversas as possibilidades de formatação em Markdown. Explorarei as vastas opções como forma de ilustração ao que é possível.
 tags:
   - markdown
 ---
 
 # Hello World
 
-Post teste para o meu blog.
+Post teste **para** o meu blog.
 
-Vou inserir algumas funções de exemplo para ilustrar as possibilidades de formatação em Markdown.
+Vou *inserir algumas* funções de exemplo para ilustrar as `possibilidades` de formatação em Markdown.
 
 ### Código
 ```java
@@ -30,7 +31,7 @@ public class Main {
 
 ### Checklist
 
-- [ ] Lorem
+- [x] Lorem
 - [ ] Ipsum
 
 ### Citação
