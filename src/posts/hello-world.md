@@ -1,7 +1,7 @@
 ---
 filename: hello-world.md
 title: Hello World
-date: 15/12/2025
+date: 16/12/2025
 description: Explicação da criação do blog.
 tags:
   - markdown
