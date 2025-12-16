@@ -6,7 +6,7 @@ import { ListPosts } from '@/components';
     <div>
         <h1 class="text-2xl text-green-800 dark:text-green-400 mb-1.5">Olá!</h1>
         <p class="text-justify">
-        Esse blog é destinado para os meus relatos de entendimento em assuntos derivados dentro do ramo do desenvolvimento de software.
+            Esse blog é destinado para os meus relatos sobre assuntos relacionados ao desenvolvimento de software.
         </p>
         <router-link to="/postagens">
             <h1
