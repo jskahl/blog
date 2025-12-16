@@ -1,13 +1,20 @@
 <script setup lang="ts">
-import ListPosts from '../components/ListPosts.vue'; 
+import { ListPosts } from '@/components'; 
 </script>
 
 <template>
     <div>
         <h1 class="text-2xl text-green-800 dark:text-green-400 mb-1.5">Olá!</h1>
         <p class="text-justify">
-            Esse blog é dedicado especificamente as minhas explicações sobre desenvolvimento web, programação e assuntos relacionados. Compartilharei meus conhecimentos, experiências e dicas para ajudar outros desenvolvedores em seus devidos aprendizados. Fique à vontade para explorar os artigos e aprender junto comigo!
+        Esse blog é destinado para os meus relatos de entendimento em assuntos derivados dentro do ramo do <strong>desenvolvimento de software</strong>. Tenho como objetivo em cada post revisar o meu entendimento no determinado assunto de maneira explicativa, possivelmente ajudando outras pessoas que estejam buscando o mesmo conhecimento.
         </p>
+        <router-link to="/postagens">
+            <h1
+                class="text-2xl text-green-800 dark:text-green-400 mt-4 border-b-2 border-(--bg-color) dark:border-(--text-color) border-dashed pb-2">
+                Postagens
+            </h1>
+        </ router-link >
+
         <ListPosts />
     </div>
 </template>
