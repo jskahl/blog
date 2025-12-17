@@ -44,7 +44,7 @@ onMounted(async () => {
 
 <template>
     <div v-for="(post, index) in frontmatters" :key="index"
-        class="hover:scale-[102%] hover:shadow-xl duration-200 active:scale-85 transition-all rounded-xl">
+        class="hover:scale-[102%] border-dashed active:border-solid border-2 border-transparent hover:border-(--bg-color) dark:hover:border-(--text-color) duration-300 active:scale-90 transition-all rounded-md">
         <router-link :to="`/postagens/${post.filename.replace('.md', '')}`"
             class="flex flex-col gap-3 mb-4 p-4 bg-inherit">
             <div class="flex gap-3">

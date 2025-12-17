@@ -7,8 +7,6 @@ tags:
   - markdown
 ---
 
-# Hello World
-
 Esse blog foi criado para compartilhar os meus estudos em assuntos dentro da área de **desenvolvimento de software**.
 
 A principal razão da criação desse blog é registrar meu aprendizado de maneira revisável, ajudar pessoas que possam se aproveitar do conhecimento aqui escrito e, de maneira gradual, criar um curriculo público do meu desenvolvimento como profissional na minha área de atuação.
