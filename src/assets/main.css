@@ -23,37 +23,36 @@ body {
 
 /* Hide scrollbar but keep scrolling */
 * {
-  scrollbar-width: none;        /* Firefox */
-  -ms-overflow-style: none;     /* IE 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
 }
 
 *::-webkit-scrollbar {
-  display: none;                /* Chrome, Safari, Edge */
+    display: none;
+    /* Chrome, Safari, Edge */
 }
 
 #app {
     height: 100%;
 }
 
-
 .hljs {
-  @apply block;
-}
-html:not(.dark) .hljs {
-  @import 'highlight.js/styles/github-dark.css';
-}
-
-/* dark mode */
-html.dark .hljs {
-  @import 'highlight.js/styles/github.css';
+    @import "highlight.js/styles/github-dark.css";
+    background: transparent !important;
 }
 
 html.dark .hljs {
-  background: #efefef;
-  color: #232323;
+    @import "highlight.js/styles/github-dark.css";
+}
+
+html.dark .hljs {
+    background: #121212;
+    color: #efefef;
 }
 
 html:not(.dark) .hljs {
-  background: #232323;
-  color: #efefef;
+    background: #232323;
+    color: #efefef;
 }

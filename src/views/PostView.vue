@@ -50,7 +50,7 @@ md.use(MarkdownTOCDoneRight); //, {
 
 md.use(MarkdownItCodeCopy, {
   buttonClass:
-    "text-inherit [&_span]:text-(--text-color) dark:[&_span]:text-(--bg-color) text-red-200 hover:scale-110 transition-transform active:scale-90 duration-100",
+    "text-inherit [&_span]:text-(--text-color) hover:scale-110 transition-transform active:scale-90 duration-100",
 });
 
 const modules = import.meta.glob("../posts/*.md", {
@@ -80,9 +80,57 @@ onMounted(async () => {
     >
       {{ frontmatter.title }}
     </h1>
-    <article
-      class="prose dark:prose-invert prose-a:decoration-wavy prose-a:decoration-green-800 dark:prose-a:decoration-green-400 prose-headings:scroll-mt-20 prose-h1:text-3xl prose-p:text-justify markdown prose-blockquote:prose-p:first-of-type:after:content-none prose-blockquote:prose-p:first-of-type:before:content-none prose-code:before:content-none prose-code:after:content-none not-prose-pre:prose-code:bg-(--bg-color) dark:not-prose-pre:prose-code:bg-(--text-color) not-prose-pre:prose-code:text-(--text-color) dark:not-prose-pre:prose-code:text-(--bg-color) not-prose-pre:prose-code:rounded-sm not-prose-pre:prose-code:p-1 text-inherit bg-inherit prose-blockquote:prose-p:opacity-50 prose-strong:font-extrabold prose-strong:text-green-800 dark:prose-strong:font-extrabold dark:prose-strong:text-green-400 prose-pre:bg-(--bg-color) prose-pre:bg(--text-color) dark:prose-pre:bg-(--text-color) dark:prose-pre:text-(--bg-color) dark:prose-pre:bg-(--text-color) dark:prose-pre:text-(--bg-color) prose-blockquote:quotes prose-blockquote:border-l-green-800 dark:prose-blockquote:border-l-green-400 prose-li:marker:text-green-800 dark:prose-li:marker:text-green-400 w-full h-full"
-    >
+
+<article
+  class="
+    /* ───────────────── Base ───────────────── */
+    w-full h-full
+    markdown
+    max-w-none
+    prose
+    dark:prose-invert
+    text-inherit bg-inherit
+
+    /* ───────────────── Links ───────────────── */
+    prose-a:decoration-wavy
+    prose-a:decoration-green-800
+    dark:prose-a:decoration-green-400
+
+    /* ───────────── Headings & text ─────────── */
+    prose-headings:scroll-mt-20
+    prose-h1:text-3xl
+    prose-p:text-justify
+
+    /* ───────────── Inline code ─────────────── */
+    prose-code:before:content-none
+    prose-code:after:content-none
+    not-prose-pre:prose-code:rounded-sm
+    not-prose-pre:prose-code:p-1
+    not-prose-pre:prose-code:bg-(--bg-color)
+    dark:not-prose-pre:prose-code:bg-[#121212]
+    not-prose-pre:prose-code:text-(--text-color)
+    dark:not-prose-pre:prose-code:text-(--text-color)
+
+    /* ───────────── Code blocks ─────────────── */
+    [&_pre:has(>code)]:bg-(--bg-color)
+    dark:[&_pre:has(>code)]:bg-[#121212]
+
+    /* ───────────── Blockquotes ─────────────── */
+    prose-blockquote:quotes
+    prose-blockquote:border-l-green-800
+    dark:prose-blockquote:border-l-green-400
+    prose-blockquote:prose-p:opacity-50
+    prose-blockquote:prose-p:first-of-type:before:content-none
+    prose-blockquote:prose-p:first-of-type:after:content-none
+
+    /* ───────────── Lists & emphasis ────────── */
+    prose-li:marker:text-green-800
+    dark:prose-li:marker:text-green-400
+    prose-strong:font-extrabold
+    prose-strong:text-green-800
+    dark:prose-strong:text-green-400
+  "
+>
       <div v-html="html" class="w-full h-full" />
     </article>
   </div>
