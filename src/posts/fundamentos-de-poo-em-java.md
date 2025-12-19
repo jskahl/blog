@@ -14,7 +14,8 @@ Java é uma linguagem de programação amplamente utilizada em sistemas corporat
 
 Sendo uma linguagem **orientada a objetos**, Java trabalha com conceitos fundamentais de programação orientada a objetos que são intrinsecos para o desenvolvimento de software nessa linguagem e em muitas outras. A compreensão desses conceitos é essencial para qualquer desenvolvedor que queira criar, manter ou escalar sistemas de todos os níveis de complexidade, do de mais fácil entendimento ao mais avançado. Esses conceitos incluem:
 
-- Classes e Objetos
+- Classes 
+- Objetos
 - Herança
 - Polimorfismo
 - Encapsulamento
@@ -53,10 +54,7 @@ Acontece que Java já possui métodos embutidos, assim como qualquer outra lingu
 
 Com isso em mente, vamos sair um pouco da prática e ir para a teoria...
 
-# Classes e Objetos
-Classes e Objetos são os pilares da **programação orientada a objetos**. Uma depende da outra para existir e formam um ótimo caminho pra construção de um bom sistema.
-
-## Classes
+# Classes
 Classes são templates, *blueprints* para **objetos**.\
 Elas levam todas as caracteristicas que um objeto, uma instância de uma classe, ira possuir. Indo pra um lado um pouco mais abrangente: pense em uma classe como uma idéia superficial do que algo é, uma generalização. Ela serve de planta para o que um objeto será. \
 Por exemplo: uma classe `Pessoa` terá caracteristicas, **propriedades**, como: nome, idade, endereço e etc... E também terá funções, **métodos**, como `Comer`, `Andar` e etc...
@@ -88,8 +86,9 @@ Da mesma maneira que declaramos atributos, nós podemos declarar métodos. Note 
 
 Classes são essenciais para os fundamentos em java, pois elas são a base para a criação de objetos e a implementação dos conceitos de orientação a objetos.
 
-## Objetos
-Objetos são instâncias de classes.\
+# Objetos
+
+Objetos são **instâncias de classes**.\
 Eles são criados a partir das classes e possuem os atributos e métodos definidos na classe. Pense em objetos como a ideia generalizada (`classe`) sendo construída para algo mais específico.
 
 ```java
@@ -100,48 +99,44 @@ pessoa1.endereco = "Rua A, 123";
 ```
 No exemplo acima, nós criamos um objeto `pessoa1` a partir da classe `Pessoa`. Utilizamos a palavra-chave `new` para instanciar a classe, criando assim um novo objeto. Em seguida, atribuímos valores aos atributos do objeto `pessoa1`.
 
-## Comparação
 
 Classes são como plantas arquitetônicas, enquanto objetos são as casas construídas a partir dessas plantas.\
 Classes definem a estrutura e o comportamento, enquanto objetos são as instâncias concretas que utilizam essa estrutura e comportamento.
 
 # Herança
 
-Herança é um dos conceitos fundamentais da programação orientada a objetos.\
-Ela permite que uma classe (subclasse) herde atributos e métodos de outra classe (superclasse). Isso promove a reutilização de código e estabelece uma relação hierárquica entre classes. 
+Herança é um dos conceitos fundamentais da programação orientada a objetos quando se trata de um sistema vago que abre portas para diversos caminhos na soluções de problemáticas no meio de **reutilização de código**.\
+Ela permite que uma classe (`subclass`) herde atributos e métodos de outra classe (`superclass`). Isso promove a reutilização de código e estabelece uma relação hierárquica entre classes. \
+Pense na herança como uma extensão da instanciação de uma classe. Ao invés de criar um objeto diretamente a partir de uma classe e se limitar aos atributos e métodos dentro dessa classe, você pode criar uma nova clase, herdando os já existentes atributos e métodos, e adicionar novos ou modificar os já existentes.
+
+Levando em conta o exemplo da criação da classe `Pessoa`, veja:
 
 ```java
-class Animal {
-    String nome;
-    int idade;
+class Programador extends Pessoa {
+    String linguagemFavorita;
 
-    public void fazerSom() {
-        System.out.println("Som genérico de animal");
+    public void desenvolverSoftware() {
+        System.out.println("Desenvolvendo software...");
     }
 }
 ```
-No exemplo acima, temos uma classe `Animal` que possui atributos `nome` e `idade`, além de um método `fazerSom`.
+Aqui, a classe `Programador` **estende** a classe `Pessoa`, herdando seus atributos e métodos. A classe `Pessoa` possui os atributos `nome`, `idade` e `endereco`, que agora também fazem parte da classe `Programador`. Além disso, a classe `Programador` adiciona um novo atributo `linguagemFavorita` e um novo método `desenvolverSoftware`.
 
 ```java
-class Cachorro extends Animal {
-    public void fazerSom() {
-        System.out.println("Latido");
-    }
-}
-```
-Aqui, a classe `Cachorro` **estende** a classe `Animal`, herdando seus atributos e métodos. A classe `Cachorro` também sobrescreve o método `fazerSom` para fornecer uma implementação específica para cachorros.
+Programador programador = new Programador();
 
-```java
-Cachorro cachorro = new Cachorro();
-cachorro.nome = "Rex";
-cachorro.idade = 3;
-cachorro.fazerSom(); // Output: Latido
+programador.nome = "José";   // Atributo herdado da classe Pessoa
+programador.idade = 19;     // 
+programador.linguagemFavorita = "Java";
+
+programador.desenvolverSoftware(); // Output: Desenvolvendo software...
 ```
-No exemplo acima, criamos um objeto `cachorro` da classe `Cachorro`. Ele herda os atributos `nome` e `idade` da classe `Animal` e utiliza o método sobrescrito `fazerSom`.
+No exemplo acima, instanciamos um objeto `programador` da classe `Programador`. Note que podemos acessar os atributos herdados da classe `Pessoa`, como `nome` e `idade`, além de utilizar o método específico da classe `Programador`, `desenvolverSoftware()` (o mesmo funcionaria para algum método existente na classe `Pessoa`, como o método `comer()`, por exemplo).
 
 # Polimorfismo
 
-Polimorfismo é um conceito fundamental na programação orientada a objetos que permite que objetos de diferentes classes sejam tratados como objetos de uma classe comum.\
+Polimorfismo é um conceito um pouco dificil de entender, primariamente, ele permite que objetos de diferentes classes sejam tratados como objetos de uma classe comum.\
+Pense no polimorfismo como a capacidade de um método se comportar de maneiras diferentes dependendo do objeto que o invoca. Uma **sobrescrição do mesmo método em diferentes classes pode resultar em **comportamentos distintos**.\
 Isso é possível através da herança e da sobrescrição de métodos, permitindo que o mesmo método se comporte de maneiras diferentes dependendo do objeto que o invoca. 
 
 ```java
@@ -151,7 +146,7 @@ class Animal {
     }
 }
 ```
-Acima, temos uma classe `Animal` com um método `fazerSom`.
+Acima, temos uma classe `Animal` com um método `fazerSom()`.
 
 ```java
 class Gato extends Animal {
@@ -160,7 +155,7 @@ class Gato extends Animal {
     }
 }
 ```
-Aqui, a classe `Gato` estende a classe `Animal` e sobrescreve o método `fazerSom` para fornecer uma implementação específica para gatos.
+Aqui, a classe `Gato` *estende* a classe `Animal` e **sobrescreve** o método `fazerSom` para fornecer uma implementação específica para gatos.
 
 ```java
 class Cachorro extends Animal {
@@ -169,7 +164,7 @@ class Cachorro extends Animal {
     }
 }
 ```
-Da mesma forma, a classe `Cachorro` estende a classe `Animal` e sobrescreve o método `fazerSom` para cachorros.
+Da mesma forma, a classe `Cachorro` *estende* a classe `Animal` e **sobrescreve** o método `fazerSom` para cachorros.
 
 ```java
 Animal meuAnimal;
